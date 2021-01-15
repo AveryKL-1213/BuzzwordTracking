@@ -7,13 +7,13 @@ import matplotlib.pyplot as plt
 
 
 def getSinaNews(pages):
-    # 要爬取的网页
+    # 新浪
     url = 'https://news.sina.com.cn/roll/'
     # 获取无界面浏览器
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--headless')
     browser = webdriver.Chrome(options=chrome_options)
-    # 爬
+    # 爬取
     news_list = ''
     while pages > 0:
         try:
