@@ -36,7 +36,6 @@ class BuzzWord:
                 continue
             Page -= 1
         browser.quit()
-        return self.newsList
 
     def countBuzzword(self):  # 热词词频统计
         allWordList = jieba.cut(self.newsList, cut_all=False)
@@ -64,7 +63,7 @@ class BuzzWord:
             max_font_size=500,
             random_state=40,
             contour_width=3,
-            contour_color='cyan',
+            contour_color='blue',
         )
         wordCloudPicture = word_cloud.generate(joinedWords)  # 生成词云
         # 显示词云图片
