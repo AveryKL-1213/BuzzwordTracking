@@ -21,10 +21,10 @@ class BuzzWord:
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument('--headless')
         browser = webdriver.Chrome(options=chrome_options)
-        while Page > 0:
+        for i in range(1, Page+1):  # 循环获取每页的所有新闻标题
             try:
-                print(self.url+str(21-Page))
-                browser.get(self.url+str(21-Page))
+                print('Get Page%d' % i)
+                browser.get(self.url+str(i))
                 browser.refresh()
                 newsTitle = browser.find_elements_by_xpath(
                     '//*[@id="d_list"]/ul/li/span/a')
@@ -34,7 +34,6 @@ class BuzzWord:
                 print('NoSuchElementException')
                 browser.close()
                 continue
-            Page -= 1
         browser.quit()
 
     def countBuzzword(self):  # 热词词频统计
