@@ -11,9 +11,9 @@ class BuzzWord:
     def __init__(self):
         # 新浪滚动新闻
         self.url = 'https://news.sina.com.cn/roll/#pageid=153&lid=2509&k=&num=50&page='
-        self.newsList = ""
-        self.top10Words = []
-        self.stopwords = [line.strip() for line in open(
+        self.newsList = ""  # 全部的新闻标题
+        self.top10Words = []  # 词频前10的词
+        self.stopwords = [line.strip() for line in open(  # 停用字
             'BuzzwordTracking/StopWords.txt', encoding='utf-8').readlines()] + [u' ']
 
     def getNewsTitle(self, Page=20):  # 获取全部新闻标题，默认获取20页的新闻标题
