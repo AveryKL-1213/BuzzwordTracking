@@ -1,10 +1,10 @@
 import jieba
+import collections
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from wordcloud import WordCloud
 from imageio import imread
 import matplotlib.pyplot as plt
-import collections
 
 
 class BuzzWord:
